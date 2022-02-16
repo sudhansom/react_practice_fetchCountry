@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home></Home>}></Route>
         <Route exact path="/detail" element={<DetailPage></DetailPage>}></Route>
+        <Route exact path="/cart" element={<CartPage></CartPage>}></Route>
       </Routes>
     </div>
   );
