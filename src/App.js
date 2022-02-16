@@ -1,10 +1,16 @@
-import logo from "./logo.svg";
+import { Routes, Route } from "react-router-dom";
+
+import Home from "./components/Home";
 import "./App.css";
+import DetailPage from "./components/DetailPage";
 
 function App() {
   return (
     <div className="App">
-      <h1> My Home Page</h1>
+      <Routes>
+        <Route exact path="/" element={<Home></Home>}></Route>
+        <Route exact path="/detail" element={<DetailPage></DetailPage>}></Route>
+      </Routes>
     </div>
   );
 }
