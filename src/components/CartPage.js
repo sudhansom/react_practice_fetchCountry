@@ -1,11 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import React from "react";
 import { removeCountry } from "./redux/action";
 
 function CartPage() {
   const dispatch = useDispatch();
+  const { name } = useParams();
+  console.log("name", name);
   const handleRemove = () => {
-    dispatch(removeCountry("Nepal"));
+    dispatch(removeCountry(name));
   };
   return (
     <div>

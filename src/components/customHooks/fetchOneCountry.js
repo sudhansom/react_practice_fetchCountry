@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const useFetchCountries = (url) => {
-  const [countries, setCountries] = useState([]);
+const useFetchCountry = (url) => {
+  const [country, setCountry] = useState([]);
   const [err, setError] = useState([]);
 
   useEffect(() => {
     try {
-      const getAllCountries = async (url) => {
+      const getCountry = async (url) => {
         const data = await axios.get(url);
-        setCountries(data.data);
+        setCountry(data.data);
       };
-      getAllCountries(url);
+      getCountry(url);
     } catch (err) {
       setError(err);
     }
   }, [url]);
 
-  return [err, countries];
+  return [err, country];
 };
-export default useFetchCountries;
+export default useFetchCountry;
