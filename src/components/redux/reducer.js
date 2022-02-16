@@ -32,3 +32,5 @@ const countryReducer = (state = defaultState, action) => {
       return state;
   }
 };
+
+export default countryReducer;
