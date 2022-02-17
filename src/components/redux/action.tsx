@@ -2,7 +2,7 @@ import { Dispatch } from "redux";
 import { Country } from "./types";
 
 // insert country to cart if does not exist
-export const insertCountry = (country: Country[]) => {
+export const insertCountry = (country: Country) => {
   return {
     type: "INSERT_COUNTRY",
     payload: country,
@@ -74,3 +74,43 @@ export const setDarkTheme = () => {
     type: "DARK",
   };
 };
+
+type InsertCountry = {
+  type: "INSERT_COUNTRY";
+  payload: Country;
+};
+
+type RemoveCountry = {
+  type: "REMOVE_COUNTRY";
+  payload: string;
+};
+
+type OneCountrySuccess = {
+  type: "SUCCESS_ONE_COUNTRY";
+  payload: Country[];
+};
+type AllCountriesSuccess = {
+  type: "SUCCESS_ALL_COUNTRIES";
+  payload: Country[];
+};
+
+type OnFetchFail = {
+  type: "FETCH_FAIL";
+  payload: any;
+};
+
+type SetDarkTheme = {
+  type: "DARK";
+};
+type SetLightTheme = {
+  type: "LIGHT";
+};
+
+export type AllActions =
+  | InsertCountry
+  | RemoveCountry
+  | OneCountrySuccess
+  | AllCountriesSuccess
+  | OnFetchFail
+  | SetDarkTheme
+  | SetLightTheme;
