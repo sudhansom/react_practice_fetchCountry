@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { getOneCountry } from "../redux/action";
@@ -10,7 +10,7 @@ const useFetchCountry = (countryName) => {
 
   useEffect(() => {
     dispatch(getOneCountry(countryName));
-  }, [dispatch]);
+  }, [countryName, dispatch]);
 
   return [err, country];
 };
