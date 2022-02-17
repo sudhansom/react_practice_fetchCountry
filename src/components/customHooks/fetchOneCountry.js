@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
 
-const useFetchCountry = (url) => {
-  const [country, setCountry] = useState([]);
-  const [err, setError] = useState([]);
+import { getOneCountry } from "../redux/action";
+
+const useFetchCountry = (countryName) => {
+  const dispatch = useDispatch();
+  const country = useSelector((state) => state.country);
+  const err = useSelector((state) => state.err);
 
   useEffect(() => {
-    try {
-      const getCountry = async (url) => {
-        const data = await axios.get(url);
-        setCountry(data.data);
-      };
-      getCountry(url);
-    } catch (err) {
-      setError(err);
-    }
-  }, [url]);
+    dispatch(getOneCountry(countryName));
+  }, [dispatch]);
 
   return [err, country];
 };
