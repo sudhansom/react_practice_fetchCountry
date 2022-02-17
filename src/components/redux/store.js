@@ -1,11 +1,11 @@
 import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-import countryReducer from "./reducers/countryReducer";
+import rootReducer from "./reducers";
 
 const storeFactory = () => {
   const store = createStore(
-    countryReducer,
+    rootReducer,
     composeWithDevTools(applyMiddleware(thunk))
   );
   store.subscribe(() => {

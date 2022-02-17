@@ -6,8 +6,8 @@ import { getAllCountries } from "../redux/action";
 
 const useFetchCountries = () => {
   const dispatch = useDispatch();
-  const countryList = useSelector((state) => state.countries);
-  const err = useSelector((state) => state.err);
+  const countryList = useSelector((state) => state.countryReducer.countries);
+  const err = useSelector((state) => state.countryReducer.err);
 
   useEffect(() => {
     console.log("inside hook....");

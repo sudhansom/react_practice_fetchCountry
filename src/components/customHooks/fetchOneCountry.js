@@ -5,8 +5,8 @@ import { getOneCountry } from "../redux/action";
 
 const useFetchCountry = (countryName) => {
   const dispatch = useDispatch();
-  const country = useSelector((state) => state.country);
-  const err = useSelector((state) => state.err);
+  const country = useSelector((state) => state.countryReducer.country);
+  const err = useSelector((state) => state.countryReducer.err);
 
   useEffect(() => {
     dispatch(getOneCountry(countryName));

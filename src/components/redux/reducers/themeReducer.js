@@ -2,7 +2,7 @@ const defaultState = {
   theme: "light",
 };
 
-const themeReducer = (state, action) => {
+const themeReducer = (state = defaultState, action) => {
   switch (action.payload) {
     case "LIGHT":
       return {
