@@ -4,9 +4,7 @@ import useFetchCountry from "./customHooks/fetchOneCountry";
 
 function DetailPage() {
   const { countryName } = useParams();
-  const [err, country] = useFetchCountry(
-    `https://restcountries.com/v3.1/name/${countryName}`
-  );
+  const [err, country] = useFetchCountry();
   console.log("oneCountry", country);
 
   return <p>comming up soon....</p>;

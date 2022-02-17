@@ -12,6 +12,26 @@ export const removeCountry = (countryName) => {
     payload: countryName,
   };
 };
+export const getOneCountry = (countryName) => {
+  return async (dispatch, getState) => {
+    try {
+      const result = await fetch(
+        `https://restcountries.com/v3.1/name/${countryName}`
+      );
+      const data = await result.json();
+      dispatch(oneCountrySuccess(data[0]));
+    } catch (err) {
+      dispatch(onFetchFail(err));
+    }
+  };
+};
+
+const oneCountrySuccess = (country) => {
+  return {
+    type: "SUCCESS_ONE_COUNTRY",
+    payload: country,
+  };
+};
 
 export const getAllCountries = () => {
   return async (dispatch, getState) => {
