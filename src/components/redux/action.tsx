@@ -1,19 +1,22 @@
+import { Dispatch } from "redux";
+import { Country } from "./types";
+
 // insert country to cart if does not exist
-export const insertCountry = (country) => {
+export const insertCountry = (country: Country[]) => {
   return {
     type: "INSERT_COUNTRY",
     payload: country,
   };
 };
 // remove country from cart
-export const removeCountry = (countryName) => {
+export const removeCountry = (countryName: string) => {
   return {
     type: "REMOVE_COUNTRY",
     payload: countryName,
   };
 };
-export const getOneCountry = (countryName) => {
-  return async (dispatch, getState) => {
+export const getOneCountry = (countryName: string) => {
+  return async (dispatch: Dispatch, getState: any) => {
     try {
       const result = await fetch(
         `https://restcountries.com/v3.1/name/${countryName}`
@@ -26,7 +29,7 @@ export const getOneCountry = (countryName) => {
   };
 };
 
-const oneCountrySuccess = (country) => {
+const oneCountrySuccess = (country: Country[]) => {
   return {
     type: "SUCCESS_ONE_COUNTRY",
     payload: country,
@@ -34,7 +37,7 @@ const oneCountrySuccess = (country) => {
 };
 
 export const getAllCountries = () => {
-  return async (dispatch, getState) => {
+  return async (dispatch: Dispatch, getState: any) => {
     try {
       const result = await fetch("https://restcountries.com/v2/all");
       const countryList = await result.json();
@@ -46,14 +49,14 @@ export const getAllCountries = () => {
   };
 };
 
-const allCountriesSuccess = (countryList) => {
+const allCountriesSuccess = (countryList: Country[]) => {
   return {
     type: "SUCCESS_ALL_COUNTRIES",
     payload: countryList,
   };
 };
 
-const onFetchFail = (err) => {
+const onFetchFail = (err: any) => {
   return {
     type: "FETCH_FAIL",
     payload: err,
