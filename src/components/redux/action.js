@@ -59,3 +59,15 @@ const onFetchFail = (err) => {
     payload: err,
   };
 };
+
+export const setLightTheme = () => {
+  return {
+    type: "LIGHT",
+  };
+};
+
+export const setDarkTheme = () => {
+  return {
+    type: "DARK",
+  };
+};
