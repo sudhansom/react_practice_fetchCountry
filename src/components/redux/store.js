@@ -8,6 +8,10 @@ const storeFactory = () => {
     countryReducer,
     composeWithDevTools(applyMiddleware(thunk))
   );
+  store.subscribe(() => {
+    const cart = store.getState().cart;
+    localStorage.setItem("cart", JSON.stringify(cart));
+  });
   return store;
 };
 

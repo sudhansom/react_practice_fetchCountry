@@ -15,7 +15,7 @@ function App() {
           path="/detail/:countryName"
           element={<DetailPage></DetailPage>}
         ></Route>
-        <Route exact path="/cart/:name" element={<CartPage></CartPage>}></Route>
+        <Route exact path="/cart" element={<CartPage></CartPage>}></Route>
       </Routes>
     </div>
   );

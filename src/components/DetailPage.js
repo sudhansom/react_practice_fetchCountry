@@ -7,7 +7,11 @@ function DetailPage() {
   const [err, country] = useFetchCountry(countryName);
   console.log("oneCountry", country);
 
-  return <p>comming up soon....</p>;
+  if (country) {
+    return <p>fetched...</p>;
+  } else {
+    return <p>comming up soon...</p>;
+  }
 }
 
 export default DetailPage;
