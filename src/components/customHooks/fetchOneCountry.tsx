@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Store } from "../redux/reducers";
 
 import { getOneCountry } from "../redux/action";
 
-const useFetchCountry = (countryName) => {
+const useFetchCountry = (countryName: string | undefined) => {
   const dispatch = useDispatch();
-  const country = useSelector((state) => state.countryReducer.country);
-  const err = useSelector((state) => state.countryReducer.err);
+  const country = useSelector((state: Store) => state.countryReducer.countries);
+  const err = useSelector((state: Store) => state.countryReducer.err);
 
   useEffect(() => {
     dispatch(getOneCountry(countryName));

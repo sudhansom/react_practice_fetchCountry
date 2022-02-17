@@ -1,13 +1,23 @@
 import { AllActions } from "../action";
+import { Country } from "../types";
 
-const defaultState = {
+type DefaultState = {
+  cart: Country[];
+  countries: Country[];
+  err: any;
+  country: Country | null;
+};
+const defaultState: DefaultState = {
   cart: [],
   countries: [],
   err: null,
-  country: {},
+  country: null,
 };
 
-const countryReducer = (state = defaultState, action: AllActions) => {
+const countryReducer = (
+  state = defaultState,
+  action: AllActions
+): DefaultState => {
   switch (action.type) {
     case "INSERT_COUNTRY":
       const incommingCountry = action.payload.name;

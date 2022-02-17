@@ -9,13 +9,13 @@ export const insertCountry = (country: Country) => {
   };
 };
 // remove country from cart
-export const removeCountry = (countryName: string) => {
+export const removeCountry = (countryName: string | undefined) => {
   return {
     type: "REMOVE_COUNTRY",
     payload: countryName,
   };
 };
-export const getOneCountry = (countryName: string) => {
+export const getOneCountry = (countryName: string | undefined) => {
   return async (dispatch: Dispatch, getState: any) => {
     try {
       const result = await fetch(
@@ -29,7 +29,7 @@ export const getOneCountry = (countryName: string) => {
   };
 };
 
-const oneCountrySuccess = (country: Country[]) => {
+const oneCountrySuccess = (country: Country) => {
   return {
     type: "SUCCESS_ONE_COUNTRY",
     payload: country,
@@ -82,12 +82,12 @@ type InsertCountry = {
 
 type RemoveCountry = {
   type: "REMOVE_COUNTRY";
-  payload: string;
+  payload: string | undefined;
 };
 
 type OneCountrySuccess = {
   type: "SUCCESS_ONE_COUNTRY";
-  payload: Country[];
+  payload: Country;
 };
 type AllCountriesSuccess = {
   type: "SUCCESS_ALL_COUNTRIES";

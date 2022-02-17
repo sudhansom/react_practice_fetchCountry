@@ -5,10 +5,10 @@ import { removeCountry } from "./redux/action";
 
 function CartPage() {
   const dispatch = useDispatch();
-  const { name } = useParams();
-  console.log("name", name);
+  let { countryName } = useParams();
+  console.log("name", countryName);
   const handleRemove = () => {
-    dispatch(removeCountry(name));
+    dispatch(removeCountry(countryName));
   };
   return (
     <div>

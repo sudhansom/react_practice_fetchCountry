@@ -1,9 +1,17 @@
-const defaultState = {
+import { AllActions } from "../action";
+
+type DefaultState = {
+  theme: "light" | "dark";
+};
+const defaultState: DefaultState = {
   theme: "light",
 };
 
-const themeReducer = (state = defaultState, action) => {
-  switch (action.payload) {
+const themeReducer = (
+  state = defaultState,
+  action: AllActions
+): DefaultState => {
+  switch (action.type) {
     case "LIGHT":
       return {
         ...state,

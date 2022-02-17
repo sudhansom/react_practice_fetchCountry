@@ -8,4 +8,6 @@ const rootReducer = combineReducers({
   themeReducer,
 });
 
+export type Store = ReturnType<typeof rootReducer>;
+
 export default rootReducer;

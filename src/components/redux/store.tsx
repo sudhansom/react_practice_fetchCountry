@@ -4,9 +4,10 @@ import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 
 const storeFactory = () => {
+  const middleware = [thunk];
   const store = createStore(
     rootReducer,
-    composeWithDevTools(applyMiddleware(thunk))
+    composeWithDevTools(applyMiddleware(...middleware))
   );
   store.subscribe(() => {
     const cart = store.getState().countryReducer.cart;

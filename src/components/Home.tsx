@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { insertCountry, removeCountry } from "./redux/action";
 
 import allCountries from "../components/customHooks/allCountries";
+import { Country } from "./redux/types";
 import {
   TableHead,
   TableBody,
@@ -18,7 +19,7 @@ function Home() {
   const [err, countries] = allCountries();
   console.log("countries::", countries);
   const dispatch = useDispatch();
-  const addToCart = (country) => {
+  const addToCart = (country: Country) => {
     dispatch(insertCountry(country));
   };
   if (countries.length) {
@@ -35,7 +36,7 @@ function Home() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {countries.map((country) => {
+            {countries.map((country: Country) => {
               return (
                 <TableRow>
                   <TableCell>
