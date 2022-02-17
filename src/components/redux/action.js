@@ -13,7 +13,7 @@ export const removeCountry = (countryName) => {
   };
 };
 
-const getAllCountries = () => {
+export const getAllCountries = () => {
   return async (dispatch, getState) => {
     try {
       const result = await fetch("https://restcountries.com/v2/all");

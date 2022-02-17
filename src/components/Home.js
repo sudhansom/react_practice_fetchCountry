@@ -15,7 +15,7 @@ import {
 } from "@material-ui/core";
 
 function Home() {
-  const [err, countries] = allCountries("https://restcountries.com/v2/all");
+  const [err, countries] = allCountries();
   console.log("countries::", countries);
   const dispatch = useDispatch();
   const addToCart = (country) => {
