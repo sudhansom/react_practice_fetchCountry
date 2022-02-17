@@ -1,5 +1,7 @@
 const defaultState = {
   cart: [],
+  countries: [],
+  err: null,
 };
 
 const countryReducer = (state = defaultState, action) => {
@@ -26,6 +28,20 @@ const countryReducer = (state = defaultState, action) => {
       return {
         ...state,
         cart: [...filteredCountries],
+      };
+
+    case "SUCCESS_ALL_COUNTRIES":
+      const payloadAllCountries = action.payload;
+      return {
+        ...state,
+        countries: payloadAllCountries,
+      };
+
+    case "FETCH_FAIL":
+      const payloadError = action.payload;
+      return {
+        ...state,
+        err: payloadError,
       };
 
     default:
