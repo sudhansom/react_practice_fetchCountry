@@ -18,6 +18,7 @@ export const getAllCountries = () => {
     try {
       const result = await fetch("https://restcountries.com/v2/all");
       const countryList = await result.json();
+      console.log("inside thunk Countries:", countryList);
       dispatch(allCountriesSuccess(countryList));
     } catch (err) {
       dispatch(onFetchFail(err));

@@ -10,7 +10,8 @@ const useFetchCountries = () => {
   const err = useSelector((state) => state.err);
 
   useEffect(() => {
-    dispatch(getAllCountries);
+    console.log("inside hook....");
+    dispatch(getAllCountries());
   }, [dispatch]);
 
   return [err, countryList];
