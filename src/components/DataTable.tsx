@@ -14,11 +14,34 @@ type Column<T> = {
 };
 
 type DataTableProps<T> = {
-  items: T;
+  items: T[];
   column: Column<T>[];
 };
-function DataTable<T>({ items, column }: DataTableProps) {
-  return <div>DataTable</div>;
+function DataTable<T>({ items, column }: DataTableProps<T>) {
+  return (
+    <TableContainer>
+      <Table>
+        <TableHead>
+          <TableRow>
+            {column.map((c) => {
+              return <TableCell>{c.label}</TableCell>;
+            })}
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {items.map((element) => {
+            return (
+              <TableRow>
+                {column.map((col) => {
+                  return <TableCell>{col.renderContent(element)}</TableCell>;
+                })}
+              </TableRow>
+            );
+          })}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
 }
 
 export default DataTable;
