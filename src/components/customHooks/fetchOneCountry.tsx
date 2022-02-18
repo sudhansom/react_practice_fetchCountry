@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Store } from "../redux/reducers";
 
-import { getOneCountry } from "../redux/action";
+import { getOneCountry } from "../redux/thunk";
 
 const useFetchCountry = (countryName: string | undefined) => {
   const dispatch = useDispatch();

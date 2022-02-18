@@ -1,4 +1,3 @@
-import { Dispatch } from "redux";
 import { Country } from "./types";
 
 // insert country to cart if does not exist
@@ -15,48 +14,22 @@ export const removeCountry = (countryName: string | undefined) => {
     payload: countryName,
   };
 };
-export const getOneCountry = (countryName: string | undefined) => {
-  return async (dispatch: Dispatch, getState: any) => {
-    try {
-      const result = await fetch(
-        `https://restcountries.com/v3.1/name/${countryName}`
-      );
-      const data = await result.json();
-      dispatch(oneCountrySuccess(data[0]));
-    } catch (err) {
-      dispatch(onFetchFail(err));
-    }
-  };
-};
 
-const oneCountrySuccess = (country: Country) => {
+export const oneCountrySuccess = (country: Country) => {
   return {
     type: "SUCCESS_ONE_COUNTRY",
     payload: country,
   };
 };
 
-export const getAllCountries = () => {
-  return async (dispatch: Dispatch, getState: any) => {
-    try {
-      const result = await fetch("https://restcountries.com/v2/all");
-      const countryList = await result.json();
-      console.log("inside thunk Countries:", countryList);
-      dispatch(allCountriesSuccess(countryList));
-    } catch (err) {
-      dispatch(onFetchFail(err));
-    }
-  };
-};
-
-const allCountriesSuccess = (countryList: Country[]) => {
+export const allCountriesSuccess = (countryList: Country[]) => {
   return {
     type: "SUCCESS_ALL_COUNTRIES",
     payload: countryList,
   };
 };
 
-const onFetchFail = (err: any) => {
+export const onFetchFail = (err: any) => {
   return {
     type: "FETCH_FAIL",
     payload: err,

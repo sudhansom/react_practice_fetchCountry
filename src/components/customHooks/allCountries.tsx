@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 //import axios from "axios";
 
-import { getAllCountries } from "../redux/action";
+import { getAllCountries } from "../redux/thunk";
 import { Store } from "../redux/reducers";
 
 const useFetchCountries = () => {
