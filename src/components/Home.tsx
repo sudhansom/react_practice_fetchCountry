@@ -28,6 +28,12 @@ const columns = [
       return <p>{country.capital}</p>;
     },
   },
+  {
+    label: "area",
+    renderContent: (country: Country) => {
+      return <p>{country.area}</p>;
+    },
+  },
 ];
 
 function Home() {
