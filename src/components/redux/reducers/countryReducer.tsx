@@ -1,7 +1,7 @@
 import { AllActions } from "../action";
 import { Country } from "../types";
 
-type DefaultState = {
+export type DefaultState = {
   cart: Country[];
   countries: Country[];
   err: any;

@@ -1,6 +1,6 @@
 import { AllActions } from "../action";
 
-type DefaultState = {
+export type DefaultState = {
   theme: "light" | "dark";
 };
 const defaultState: DefaultState = {
