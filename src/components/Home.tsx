@@ -38,7 +38,7 @@ function Home() {
     dispatch(insertCountry(country));
   };
   if (countries.length) {
-    return <DataTable items={countries} column={columns}></DataTable>;
+    return <DataTable<Country> items={countries} column={columns}></DataTable>;
   } else {
     return <p>fetching</p>;
   }
