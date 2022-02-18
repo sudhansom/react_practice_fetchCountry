@@ -20,12 +20,18 @@ export const preloadedState: PreloadedState = {
     cart: localStorage.getItem("cart")
       ? (JSON.parse(localStorage.getItem("cart") as string) as Country[])
       : [],
-    countries: [],
+    countries: localStorage.getItem("countries")
+      ? (JSON.parse(localStorage.getItem("countries") as string) as Country[])
+      : [],
     err: "something went wrong",
     country: null,
   },
   themeReducer: {
-    theme: "light",
+    theme: localStorage.getItem("theme")
+      ? (JSON.stringify(localStorage.getItem("theme") as string) as
+          | "light"
+          | "dark")
+      : "light",
   },
 };
 
