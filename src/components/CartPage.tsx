@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Dialog, DialogTitle, Button } from "@material-ui/core";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Store } from "./redux/reducers";
 import { Country } from "./redux/types";
 import DataTable from "./DataTable";
 
 function CartPage() {
-  const dispatch = useDispatch();
   const cartContent = useSelector((state: Store) => {
     return state.countryReducer.cart;
   });
