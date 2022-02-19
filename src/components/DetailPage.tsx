@@ -5,10 +5,10 @@ import useFetchCountry from "./customHooks/fetchOneCountry";
 function DetailPage() {
   const { countryName } = useParams();
   const [err, country] = useFetchCountry(countryName);
-  console.log("oneCountry", country);
+  console.log("oneCountry-----", country);
 
   if (country) {
-    return <p>fetched...</p>;
+    return <p>{country.name.common}</p>;
   } else {
     return <p>comming up soon...</p>;
   }

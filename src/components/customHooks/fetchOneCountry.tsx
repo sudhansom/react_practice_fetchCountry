@@ -6,7 +6,7 @@ import { getOneCountry } from "../redux/thunk";
 
 const useFetchCountry = (countryName: string | undefined) => {
   const dispatch = useDispatch();
-  const country = useSelector((state: Store) => state.countryReducer.countries);
+  const country = useSelector((state: Store) => state.countryReducer.country);
   const err = useSelector((state: Store) => state.countryReducer.err);
 
   useEffect(() => {
