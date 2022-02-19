@@ -23,10 +23,7 @@ function Home() {
   const addToCart = (country: Country) => {
     dispatch(insertCountry(country));
   };
-  type Column<T> = {
-    label: string;
-    renderContent: (element: T) => React.ReactNode;
-  };
+
   // const COLUMNS = ["name", "captal", "area"];
   // const columns = COLUMNS.map((col) => {
   //   return {
