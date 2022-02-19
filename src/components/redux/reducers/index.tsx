@@ -28,9 +28,7 @@ export const preloadedState: PreloadedState = {
   },
   themeReducer: {
     theme: localStorage.getItem("theme")
-      ? (JSON.stringify(localStorage.getItem("theme") as string) as
-          | "light"
-          | "dark")
+      ? (localStorage.getItem("theme") as "light" | "dark")
       : ("light" as "light"),
   },
 };

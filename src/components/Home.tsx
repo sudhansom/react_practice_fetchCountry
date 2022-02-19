@@ -26,37 +26,6 @@ import {
 //   };
 // });
 
-const columns = [
-  {
-    label: "name",
-    renderContent: (country: Country) => {
-      return <p>{country.name}</p>;
-    },
-  },
-  {
-    label: "capital",
-    renderContent: (country: Country) => {
-      return <p>{country.capital}</p>;
-    },
-  },
-  {
-    label: "area",
-    renderContent: (country: Country) => {
-      return <p>{country.area}</p>;
-    },
-  },
-  {
-    label: "Action",
-    renderContent: (country: Country) => {
-      return (
-        <Button variant="contained" color="primary" className="submit-btn">
-          LIKE
-        </Button>
-      );
-    },
-  },
-];
-
 function Home() {
   const [err, countries] = allCountries();
   console.log("countries::", countries);
@@ -64,6 +33,51 @@ function Home() {
   const addToCart = (country: Country) => {
     dispatch(insertCountry(country));
   };
+
+  const columns = [
+    {
+      label: "Flag",
+      renderContent: (country: Country) => {
+        return <img src={country.flag} height="30em"></img>;
+      },
+    },
+    {
+      label: "name",
+      renderContent: (country: Country) => {
+        return <Link to={`/detail/${country.name}`}>{country.name}</Link>;
+      },
+    },
+    {
+      label: "capital",
+      renderContent: (country: Country) => {
+        return <p>{country.capital}</p>;
+      },
+    },
+    {
+      label: "area",
+      renderContent: (country: Country) => {
+        return <p>{country.area}</p>;
+      },
+    },
+    {
+      label: "Action",
+      renderContent: (country: Country) => {
+        return (
+          <Button
+            onClick={() => {
+              addToCart(country);
+            }}
+            variant="contained"
+            color="primary"
+            className="submit-btn"
+          >
+            LIKE
+          </Button>
+        );
+      },
+    },
+  ];
+
   if (countries.length) {
     return <DataTable<Country> items={countries} column={columns}></DataTable>;
   } else {
