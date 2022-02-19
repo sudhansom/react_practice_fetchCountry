@@ -47,4 +47,6 @@ ul {
 .navbar {
   background-color: dimgray;
   color: aliceblue;
+  padding: 0.5em;
+  height: 5vh;
 }
