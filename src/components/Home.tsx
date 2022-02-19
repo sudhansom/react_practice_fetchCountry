@@ -34,6 +34,16 @@ const columns = [
       return <p>{country.area}</p>;
     },
   },
+  {
+    label: "Action",
+    renderContent: (country: Country) => {
+      return (
+        <Button variant="contained" color="primary">
+          LIKE
+        </Button>
+      );
+    },
+  },
 ];
 
 function Home() {
