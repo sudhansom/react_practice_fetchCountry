@@ -37,17 +37,14 @@
   }
 }
 
-.submit-btn {
-  width: 100px;
-  color: #20bf7e;
-  font-size: 20px;
-  font-family: Arial;
-  text-align: center;
-  text-decoration: none;
-  padding: 10px 20px 10px 20px;
-  border: solid #20bf7e 4px;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 25px;
-  transition: width 0.3s, margin 0.3s, background-color 0.3s, color 0.3s;
+ul {
+  list-style-type: none;
+}
+.navbar ul {
+  display: flex;
+  justify-content: space-between;
+}
+.navbar {
+  background-color: dimgray;
+  color: aliceblue;
 }
