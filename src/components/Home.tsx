@@ -16,16 +16,6 @@ import {
   Button,
 } from "@material-ui/core";
 
-// const COLUMNS = ["name", "capital", "area"];
-// const columns = COLUMNS.map((c) => {
-//   return {
-//     label: c,
-//     renderContent: (country: Country) => {
-//       return <p>{country.c}</p>;
-//     },
-//   };
-// });
-
 function Home() {
   const [err, countries] = allCountries();
   console.log("countries::", countries);
@@ -33,6 +23,19 @@ function Home() {
   const addToCart = (country: Country) => {
     dispatch(insertCountry(country));
   };
+  type Column<T> = {
+    label: string;
+    renderContent: (element: T) => React.ReactNode;
+  };
+  // const COLUMNS = ["name", "captal", "area"];
+  // const columns = COLUMNS.map((col) => {
+  //   return {
+  //     label: col,
+  //     renderContent: (country: Country) => {
+  //       return <p>{country.col}</p>;
+  //     },
+  //   };
+  // });
 
   const columns = [
     {
