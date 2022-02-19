@@ -31,7 +31,7 @@ export const preloadedState: PreloadedState = {
       ? (JSON.stringify(localStorage.getItem("theme") as string) as
           | "light"
           | "dark")
-      : "light",
+      : ("light" as "light"),
   },
 };
 

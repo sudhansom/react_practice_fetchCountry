@@ -15,6 +15,17 @@ import {
   TableContainer,
   Button,
 } from "@material-ui/core";
+
+// const COLUMNS = ["name", "capital", "area"];
+// const columns = COLUMNS.map((c) => {
+//   return {
+//     label: c,
+//     renderContent: (country: Country) => {
+//       return <p>{country.c}</p>;
+//     },
+//   };
+// });
+
 const columns = [
   {
     label: "name",
@@ -38,7 +49,7 @@ const columns = [
     label: "Action",
     renderContent: (country: Country) => {
       return (
-        <Button variant="contained" color="primary">
+        <Button variant="contained" color="primary" className="submit-btn">
           LIKE
         </Button>
       );
