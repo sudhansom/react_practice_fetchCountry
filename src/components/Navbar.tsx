@@ -56,6 +56,8 @@ function Navbar() {
       renderContent: (country: Country) => {
         return (
           <Button
+            variant="contained"
+            color="secondary"
             onClick={() => {
               handleRemoveCountry(country.name);
             }}
@@ -77,7 +79,7 @@ function Navbar() {
           <li>Search</li>
         </div>
         <div className="cart-section">
-          <Badge badgeContent={total}>
+          <Badge badgeContent={total} className="badge-section">
             <a onClick={handleOpen}>
               <img src={cart} height="30em" alt="no image" />
             </a>

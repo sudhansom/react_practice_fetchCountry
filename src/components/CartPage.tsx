@@ -9,7 +9,7 @@ function CartPage() {
   const cartContent = useSelector((state: Store) => {
     return state.countryReducer.cart;
   });
-  // const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   // const handleOpen = () => {
   //   setOpen(true);
   // };
