@@ -88,7 +88,7 @@ function Navbar() {
       </ul>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Facourite items</DialogTitle>
-        <DataTable<Country> items={cartContent} column={columns}></DataTable>;
+        <DataTable<Country> items={cartContent} column={columns}></DataTable>
       </Dialog>
     </div>
   );
