@@ -6,15 +6,7 @@ import { insertCountry, removeCountry } from "./redux/action";
 import allCountries from "../components/customHooks/allCountries";
 import { Country } from "./redux/types";
 import DataTable from "./DataTable";
-import {
-  TableHead,
-  TableBody,
-  TableCell,
-  Table,
-  TableRow,
-  TableContainer,
-  Button,
-} from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 function Home() {
   const [err, countries] = allCountries();
