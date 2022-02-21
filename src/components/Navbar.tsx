@@ -18,7 +18,7 @@ function Navbar() {
   });
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
-    setOpen(true);
+    setOpen(total > 0);
   };
   const handleClose = () => {
     setOpen(false);
