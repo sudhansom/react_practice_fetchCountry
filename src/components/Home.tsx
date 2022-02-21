@@ -16,59 +16,60 @@ function Home() {
     dispatch(insertCountry(country));
   };
 
-  // const COLUMNS = ["name", "captal", "area"];
-  // const columns = COLUMNS.map((col) => {
-  //   return {
-  //     label: col,
-  //     renderContent: (country: Country) => {
-  //       return <p>{country.col}</p>;
-  //     },
-  //   };
-  // });
+  const COLUMNS = ["name", "area", "capital"];
+  const columns = COLUMNS.map((col) => {
+    return {
+      label: col,
+      renderContent: (country: Country) => {
+        console.log("col value here:::", col);
+        return <p>{country.col}</p>;
+      },
+    };
+  });
 
-  const columns = [
-    {
-      label: "Flag",
-      renderContent: (country: Country) => {
-        return <img src={country.flag} height="30em"></img>;
-      },
-    },
-    {
-      label: "name",
-      renderContent: (country: Country) => {
-        return <Link to={`/detail/${country.name}`}>{country.name}</Link>;
-      },
-    },
-    {
-      label: "capital",
-      renderContent: (country: Country) => {
-        return <p>{country.capital}</p>;
-      },
-    },
-    {
-      label: "area",
-      renderContent: (country: Country) => {
-        return <p>{country.area}</p>;
-      },
-    },
-    {
-      label: "Action",
-      renderContent: (country: Country) => {
-        return (
-          <Button
-            onClick={() => {
-              addToCart(country);
-            }}
-            variant="contained"
-            color="primary"
-            className="submit-btn"
-          >
-            LIKE
-          </Button>
-        );
-      },
-    },
-  ];
+  // const columns = [
+  //   {
+  //     label: "Flag",
+  //     renderContent: (country: Country) => {
+  //       return <img src={country.flag} height="30em"></img>;
+  //     },
+  //   },
+  //   {
+  //     label: "name",
+  //     renderContent: (country: Country) => {
+  //       return <Link to={`/detail/${country.name}`}>{country.name}</Link>;
+  //     },
+  //   },
+  //   {
+  //     label: "capital",
+  //     renderContent: (country: Country) => {
+  //       return <p>{country.capital}</p>;
+  //     },
+  //   },
+  //   {
+  //     label: "area",
+  //     renderContent: (country: Country) => {
+  //       return <p>{country.area}</p>;
+  //     },
+  //   },
+  //   {
+  //     label: "Action",
+  //     renderContent: (country: Country) => {
+  //       return (
+  //         <Button
+  //           onClick={() => {
+  //             addToCart(country);
+  //           }}
+  //           variant="contained"
+  //           color="primary"
+  //           className="submit-btn"
+  //         >
+  //           LIKE
+  //         </Button>
+  //       );
+  //     },
+  //   },
+  // ];
 
   if (countries.length) {
     return <DataTable<Country> items={countries} column={columns}></DataTable>;
