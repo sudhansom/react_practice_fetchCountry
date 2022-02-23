@@ -11,6 +11,7 @@ const storeFactory = () => {
     preloadedState,
     composeWithDevTools(applyMiddleware(...middleware))
   );
+
   store.subscribe(() => {
     const cart = store.getState().countryReducer.cart;
     const countries = store.getState().countryReducer.countries;

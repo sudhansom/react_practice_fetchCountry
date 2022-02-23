@@ -16,12 +16,11 @@ function Home() {
     dispatch(insertCountry(country));
   };
 
-  const COLUMNS = ["name", "area", "capital"];
+  const COLUMNS = ["name", "capital"];
   const columns = COLUMNS.map((col) => {
     return {
       label: col,
       renderContent: (country: Country) => {
-        console.log("col value here:::", col);
         return <p>{country.col}</p>;
       },
     };
